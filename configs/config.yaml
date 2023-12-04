@@ -1,0 +1,12 @@
+#configs/config.yaml
+data:
+  data_root: data
+  merged_train_csv: data/merged_train.csv
+  test_csv: data/test.csv
+  augmented_data_dir: data/augmented_data
+
+evaluation:
+  metrics: ['accuracy', 'precision', 'recall', 'f1_score']
+
+visualization:
+  figsize: (10, 8)

@@ -1,0 +1,16 @@
+#models/resnet50/configs/config_resnet50
+model:
+  name: resnet50
+  args:
+    num_classes: 5
+    pretrained: True  # Use pre-trained ResNet50 weights
+    learning_rate: 0.01
+    batch_size: 16
+    num_epochs: 10
+    num_workers: 4
+
+data:
+  data_root: data
+  merged_train_csv: data/merged_train.csv
+  test_csv: data/test.csv
+  augmented_data_dir: data/augmented_data

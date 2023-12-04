@@ -1,0 +1,14 @@
+model:
+  name: efficientnet
+  args:
+    num_classes: 5
+    pretrained: True  # Use pre-trained ResNet50 weights
+    learning_rate: 0.01
+    batch_size: 32
+    num_epochs: 10
+
+data:
+  data_root: ${data.data_root}  # Reference from config.yaml
+  train_csv: ${data.train_csv}   # Reference from config.yaml
+  test_csv: ${data.test_csv}     # Reference from config.yaml
+  augmented_data_dir: ${data.augmented_data_dir}  # Reference from config.yaml
