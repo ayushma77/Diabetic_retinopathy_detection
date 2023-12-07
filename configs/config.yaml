@@ -1,7 +1,7 @@
 #configs/config.yaml
 data:
   data_root: data
-  merged_train_csv: data/merged_train.csv
+  train_csv: data/train.csv
   test_csv: data/test.csv
   augmented_data_dir: data/augmented_data
 

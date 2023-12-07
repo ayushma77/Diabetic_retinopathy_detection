@@ -4,13 +4,13 @@ model:
   args:
     num_classes: 5
     pretrained: True  # Use pre-trained ResNet50 weights
-    learning_rate: 0.01
-    batch_size: 16
+    learning_rate: 0.001
+    batch_size: 4
     num_epochs: 10
-    num_workers: 4
+    num_workers: 2
 
 data:
   data_root: data
-  merged_train_csv: data/merged_train.csv
+  train_csv: data/train.csv
   test_csv: data/test.csv
   augmented_data_dir: data/augmented_data

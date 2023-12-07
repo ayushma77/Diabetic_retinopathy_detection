@@ -94,7 +94,7 @@ if __name__=='__main__':
             images_path, label = get_image_label_pairs(f"data/{i}", f"{i}")
             x.extend(images_path)
             y.extend(label)
-        save_as_csv(x, y, "data/test.csv")
+        
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
         save_as_csv(x_train, y_train, "data/train.csv")
         save_as_csv(x_test, y_test, "data/test.csv")
