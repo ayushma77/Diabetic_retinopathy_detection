@@ -11,6 +11,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
+from torchvision.transforms import GaussianBlur
 
 from models.resnet50.models import ResNet50Model
 from utils.imagedatasets import ImageDataset
@@ -39,7 +40,7 @@ if __name__=="__main__":
     writer=SummaryWriter(log_dir=f"artifacts/{folder_name}/tensorboard_logs")
     #prepare dataset
     train_csv_path=config['data']['train_csv']
-    val_csv_path=config['data']['train_csv']
+    val_csv_path=config['data']['test_csv']
     # Assuming you have access to the number of samples in each class
     class_samples = [1805, 370, 999,295,193]  # Replace with actual numbers
     class_weights = 1.0 / torch.tensor(class_samples, dtype=torch.float32)
@@ -51,6 +52,7 @@ if __name__=="__main__":
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
         transforms.RandomRotation(20),
+        GaussianBlur(kernel_size=5),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])

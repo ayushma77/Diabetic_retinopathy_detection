@@ -4,11 +4,12 @@ model:
     num_classes: 5
     pretrained: True  # Use pre-trained ResNet50 weights
     learning_rate: 0.01
-    batch_size: 32
+    batch_size: 4
+    num_workers: 2
     num_epochs: 10
 
 data:
-  data_root: ${data.data_root}  # Reference from config.yaml
-  train_csv: ${data.train_csv}   # Reference from config.yaml
-  test_csv: ${data.test_csv}     # Reference from config.yaml
-  augmented_data_dir: ${data.augmented_data_dir}  # Reference from config.yaml
+  data_root: data
+  train_csv: data/train.csv
+  test_csv: data/test.csv
+  
